@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://x0jv4nm0est6"]
+[gd_scene load_steps=16 format=4 uid="uid://x0jv4nm0est6"]
 
 [ext_resource type="PackedScene" uid="uid://cjxxxi42o23ac" path="res://scenes/levels/level.tscn" id="1_g6k2e"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_4q0hw"]
 [ext_resource type="PackedScene" uid="uid://j6nq334h0r5n" path="res://scenes/objects/gate.tscn" id="2_bnp2k"]
 [ext_resource type="Texture2D" uid="uid://dqxwqv3wdes7q" path="res://graphics/ground/stones.png" id="2_bwgfm"]
-[ext_resource type="Texture2D" uid="uid://dnhldpppskrfd" path="res://graphics/tilesets/outside_walls.png" id="3_vfd8v"]
-[ext_resource type="Texture2D" uid="uid://csdoq3wublpyk" path="res://graphics/tilesets/soil.png" id="4_y7j03"]
+[ext_resource type="TileSet" uid="uid://bssv48hrqtuqq" path="res://scenes/levels/outside.tres" id="4_yedd4"]
 [ext_resource type="Texture2D" uid="uid://dg68old2nc1fd" path="res://graphics/decals/dirt_patch.png" id="5_rifpi"]
 [ext_resource type="Texture2D" uid="uid://c5ay3rpblkovv" path="res://graphics/decals/moss/moss_1.png" id="6_7b0ve"]
 [ext_resource type="Texture2D" uid="uid://bl52k13ts2vjb" path="res://graphics/decals/moss/moss_3.png" id="7_4jltf"]
@@ -17,40 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://c22m63h0wnrh2" path="res://scenes/objects/toilet.tscn" id="14_vk8tp"]
 [ext_resource type="PackedScene" uid="uid://b8xcchv3hw55q" path="res://scenes/objects/box.tscn" id="15_jp5vf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oa8w"]
-resource_name = "walls"
-texture = ExtResource("3_vfd8v")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkt46"]
-resource_name = "soil"
-texture = ExtResource("4_y7j03")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_8llas"]
-tile_size = Vector2i(390, 390)
-sources/0 = SubResource("TileSetAtlasSource_8oa8w")
-sources/1 = SubResource("TileSetAtlasSource_dkt46")
-
 [node name="Outside" instance=ExtResource("1_g6k2e")]
 script = ExtResource("2_4q0hw")
 
@@ -61,13 +26,17 @@ texture = ExtResource("2_bwgfm")
 region_enabled = true
 region_rect = Rect2(-6053.55, -3097.77, 12653.1, 6327.2)
 
-[node name="TileMap" type="TileMap" parent="Ground" index="1"]
-tile_set = SubResource("TileSet_8llas")
-format = 2
-layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(-7, 1, 0, -6, 131073, 0, 65529, 1, 1, 131065, 1, 2, 131066, 131073, 2, 65530, 131073, 1, -262138, 1, 0, -196602, 1, 1, -131066, 1, 1, -65530, 1, 2, -65529, 65537, 2, -65528, 65537, 2, -65527, 65537, 2, -65526, 65537, 2, -65525, 65537, 2, 12, 1, 1, 65548, 1, 1, 131084, 1, 1, 196620, 1, 1, 262156, 1, 1, -65524, 65537, 1, 458765, 65537, 2, 458764, 1, 2, 393228, 1, 1, 327692, 1, 1, 458766, 65537, 2, 458767, 65537, 2, 458768, 131073, 2, 393232, 131073, 1, 327696, 131073, 1, 262160, 131073, 1, 196624, 131073, 1, 65552, 131073, 1, 131088, 131073, 1, 16, 131073, 1, -65520, 131073, 1, -131056, 131073, 1, -196592, 131073, 1, -262128, 131073, 0, -262129, 65537, 0, -262130, 65537, 0, -262131, 65537, 0, -262132, 65537, 0, -262133, 65537, 0, -262134, 65537, 0, -262135, 65537, 0, -262136, 65537, 0, -262137, 65537, 0, -196598, 65537, 1, -196599, 65537, 1, -196600, 65537, 1, -196601, 65537, 1, -131065, 65537, 1, -131064, 65537, 1, -131063, 65537, 1, -131062, 65537, 1, -131061, 65537, 1, -196597, 65537, 1, -196596, 65537, 1, -131060, 65537, 1, -131059, 65537, 1, -196595, 65537, 1, -196594, 65537, 1, -131058, 65537, 1, -65522, 65537, 1, -65523, 65537, 1, 13, 65537, 1, 65549, 65537, 1, 131085, 65537, 1, 196621, 65537, 1, 262157, 65537, 1, 327693, 65537, 1, 393229, 65537, 1, 393230, 65537, 1, 327694, 65537, 1, 262158, 65537, 1, 196622, 65537, 1, 131086, 65537, 1, 65550, 65537, 1, 14, 65537, 1, 15, 65537, 1, -65521, 65537, 1, -131057, 65537, 1, -196593, 65537, 1, 65551, 65537, 1, 131087, 65537, 1, 196623, 65537, 1, 262159, 65537, 1, 327695, 65537, 1, 393231, 65537, 1)
-layer_1/name = "Walls"
-layer_1/tile_data = PackedInt32Array(-4, 131072, 0, -5, 65536, 0, -6, 65536, 0, -7, 65536, 0, -8, 65536, 0, -9, 0, 0, -262138, 0, 1, -196602, 0, 2, -65530, 65536, 2, -131066, 0, 2, -65529, 65536, 0, -65528, 65536, 0, -65527, 65536, 0, -65526, 65536, 0, -65525, 65536, 0, -65524, 131072, 1, 12, 0, 2, 65548, 0, 2, 131084, 0, 2, 196620, 0, 2, 262156, 0, 3)
+[node name="TileMapLayers" type="Node2D" parent="Ground" index="1"]
+
+[node name="Ground" type="TileMapLayer" parent="Ground/TileMapLayers" index="0"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD5////AQAAAAAAAAD6////AQACAAAAAAD5/wAAAQAAAAEAAAD5/wEAAQAAAAIAAAD6/wEAAQACAAIAAAD6/wAAAQACAAEAAAAGAPz/AQAAAAAAAAAGAP3/AQAAAAEAAAAGAP7/AQAAAAEAAAAGAP//AQAAAAIAAAAHAP//AQABAAIAAAAIAP//AQABAAIAAAAJAP//AQABAAIAAAAKAP//AQABAAIAAAALAP//AQABAAIAAAAMAAAAAQAAAAEAAAAMAAEAAQAAAAEAAAAMAAIAAQAAAAEAAAAMAAMAAQAAAAEAAAAMAAQAAQAAAAEAAAAMAP//AQABAAEAAAANAAcAAQABAAIAAAAMAAcAAQAAAAIAAAAMAAYAAQAAAAEAAAAMAAUAAQAAAAEAAAAOAAcAAQABAAIAAAAPAAcAAQABAAIAAAAQAAcAAQACAAIAAAAQAAYAAQACAAEAAAAQAAUAAQACAAEAAAAQAAQAAQACAAEAAAAQAAMAAQACAAEAAAAQAAEAAQACAAEAAAAQAAIAAQACAAEAAAAQAAAAAQACAAEAAAAQAP//AQACAAEAAAAQAP7/AQACAAEAAAAQAP3/AQACAAEAAAAQAPz/AQACAAAAAAAPAPz/AQABAAAAAAAOAPz/AQABAAAAAAANAPz/AQABAAAAAAAMAPz/AQABAAAAAAALAPz/AQABAAAAAAAKAPz/AQABAAAAAAAJAPz/AQABAAAAAAAIAPz/AQABAAAAAAAHAPz/AQABAAAAAAAKAP3/AQABAAEAAAAJAP3/AQABAAEAAAAIAP3/AQABAAEAAAAHAP3/AQABAAEAAAAHAP7/AQABAAEAAAAIAP7/AQABAAEAAAAJAP7/AQABAAEAAAAKAP7/AQABAAEAAAALAP7/AQABAAEAAAALAP3/AQABAAEAAAAMAP3/AQABAAEAAAAMAP7/AQABAAEAAAANAP7/AQABAAEAAAANAP3/AQABAAEAAAAOAP3/AQABAAEAAAAOAP7/AQABAAEAAAAOAP//AQABAAEAAAANAP//AQABAAEAAAANAAAAAQABAAEAAAANAAEAAQABAAEAAAANAAIAAQABAAEAAAANAAMAAQABAAEAAAANAAQAAQABAAEAAAANAAUAAQABAAEAAAANAAYAAQABAAEAAAAOAAYAAQABAAEAAAAOAAUAAQABAAEAAAAOAAQAAQABAAEAAAAOAAMAAQABAAEAAAAOAAIAAQABAAEAAAAOAAEAAQABAAEAAAAOAAAAAQABAAEAAAAPAAAAAQABAAEAAAAPAP//AQABAAEAAAAPAP7/AQABAAEAAAAPAP3/AQABAAEAAAAPAAEAAQABAAEAAAAPAAIAAQABAAEAAAAPAAMAAQABAAEAAAAPAAQAAQABAAEAAAAPAAUAAQABAAEAAAAPAAYAAQABAAEAAAA=")
+tile_set = ExtResource("4_yedd4")
+
+[node name="Walls" type="TileMapLayer" parent="Ground/TileMapLayers" index="1"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD8////AAACAAAAAAD7////AAABAAAAAAD6////AAABAAAAAAD5////AAABAAAAAAD4////AAABAAAAAAD3////AAAAAAAAAAAGAPz/AAAAAAEAAAAGAP3/AAAAAAIAAAAGAP//AAABAAIAAAAGAP7/AAAAAAIAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAABAAAAAAAMAP//AAACAAEAAAAMAAAAAAAAAAIAAAAMAAEAAAAAAAIAAAAMAAIAAAAAAAIAAAAMAAMAAAAAAAIAAAAMAAQAAAAAAAMAAAA=")
+tile_set = ExtResource("4_yedd4")
 
 [node name="Decoration" type="Sprite2D" parent="Ground" index="2"]
 modulate = Color(1, 1, 0.811765, 0.713726)
