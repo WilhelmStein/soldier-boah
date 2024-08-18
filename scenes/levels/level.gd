@@ -26,7 +26,3 @@ func _on_house_player_entered():
 func _on_house_player_exited():
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.6,0.6), 1)
-	
-# Utility function that implements the transition to a new scene with a proper transition animation
-func transition_to_scene(scene: PackedScene) -> void:
-	get_tree().change_scene_to_packed.bind(scene).call_deferred()
