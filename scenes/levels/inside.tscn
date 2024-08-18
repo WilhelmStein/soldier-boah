@@ -18,6 +18,10 @@ size = Vector2(764, 204)
 [node name="Inside" instance=ExtResource("1_1dg83")]
 script = ExtResource("2_wllba")
 
+[node name="Ground" parent="." index="0"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
 [node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
 position = Vector2(0, -1543)
@@ -66,7 +70,7 @@ rotation = 3.14159
 position = Vector2(2158, -3619)
 rotation = 6.28318
 
-[node name="Player" parent="." index="1"]
+[node name="Player" parent="." index="3"]
 position = Vector2(0, -147)
 rotation = -1.57079
 metadata/_edit_group_ = true
@@ -76,8 +80,22 @@ energy = 0.3
 texture = ExtResource("7_gbrx6")
 texture_scale = 16.0
 
-[node name="Lights" parent="." index="3"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
+color = Color(0.325441, 0.325441, 0.325441, 1)
+blend_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="ExitGateArea" type="Area2D" parent="." index="5"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
+position = Vector2(0, 156)
+shape = SubResource("RectangleShape2D_sw71b")
+
+[node name="Lights" parent="." index="6"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Infrastructure" type="Sprite2D" parent="Lights" index="0"]
 modulate = Color(1, 1, 1, 0.12549)
@@ -120,15 +138,5 @@ modulate = Color(1, 0.560784, 0.556863, 0.0901961)
 position = Vector2(0, -1213)
 scale = Vector2(5.04, 5.04)
 texture = ExtResource("8_xf7m0")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
-color = Color(0.325441, 0.325441, 0.325441, 1)
-blend_mode = 1
-
-[node name="ExitGateArea" type="Area2D" parent="." index="5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
-position = Vector2(0, 156)
-shape = SubResource("RectangleShape2D_sw71b")
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

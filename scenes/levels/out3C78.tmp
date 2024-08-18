@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://x0jv4nm0est6"]
+[gd_scene load_steps=17 format=4 uid="uid://x0jv4nm0est6"]
 
 [ext_resource type="PackedScene" uid="uid://cjxxxi42o23ac" path="res://scenes/levels/level.tscn" id="1_g6k2e"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_4q0hw"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dk27f2uv2idyi" path="res://scenes/objects/light_fan_animation.tscn" id="12_8fjhj"]
 [ext_resource type="PackedScene" uid="uid://c22m63h0wnrh2" path="res://scenes/objects/toilet.tscn" id="14_vk8tp"]
 [ext_resource type="PackedScene" uid="uid://b8xcchv3hw55q" path="res://scenes/objects/box.tscn" id="15_jp5vf"]
+[ext_resource type="PackedScene" uid="uid://bfqe5pu0ulwc7" path="res://items/item.tscn" id="16_ba07s"]
 
 [node name="Outside" instance=ExtResource("1_g6k2e")]
 script = ExtResource("2_4q0hw")
@@ -72,16 +73,14 @@ rotation = -0.262494
 autoplay = "default"
 
 [node name="Toilet" parent="Ground" index="10" instance=ExtResource("14_vk8tp")]
-position = Vector2(1384, 1125)
-rotation = -3.14159
-collision_layer = 1
-collision_mask = 1
+position = Vector2(189, 1125)
 
 [node name="Box" parent="Ground" index="11" instance=ExtResource("15_jp5vf")]
-position = Vector2(1370, 519)
-collision_layer = 1
-collision_mask = 1
+position = Vector2(1222, 888)
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_bnp2k")]
+
+[node name="Item" parent="." index="6" instance=ExtResource("16_ba07s")]
+position = Vector2(238, 793)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

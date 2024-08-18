@@ -18,6 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://globals/globals.gd"
+Constants="*res://globals/constants.gd"
+Enums="*res://globals/enums.gd"
+Utils="*res://globals/utils.gd"
 TransitionLayer="*res://globals/transition_layer.tscn"
 
 [dotnet]
@@ -28,6 +31,10 @@ project/assembly_name="Soldier Boy"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+Container=""
 
 [input]
 

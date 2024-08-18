@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 signal laser(position, direction)
 signal grenade(position, direction)
@@ -26,7 +26,7 @@ func _process(_delta):
 	# rotate
 	look_at(get_global_mouse_position())
 
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
 	if event is InputEventMouse:
 		var player_direction = (get_global_mouse_position() - position).normalized()
 		
@@ -51,3 +51,11 @@ func _on_grenade_timer_timeout():
 
 func _on_laser_timer_timeout():
 	can_laser = true
+
+func take_item(item: Item) -> void:
+	if item.type == Enums.ITEM_TYPE.LASER_AMMO:
+		Globals.laser_amount += item.value
+	elif item.type == Enums.ITEM_TYPE.GRENADE_AMMO:
+		Globals.grenade_amount += item.value
+	elif item.type == Enums.ITEM_TYPE.HEALTH_KIT:
+		Globals.health = min(Globals.health + item.value, Constants.MAX_PLAYER_HEALTH)

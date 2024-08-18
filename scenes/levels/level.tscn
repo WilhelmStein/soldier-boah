@@ -9,6 +9,11 @@ script = ExtResource("1_ghaa7")
 
 [node name="Ground" type="Node2D" parent="."]
 
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]
+unique_name_in_owner = true
+
 [node name="Player" parent="." instance=ExtResource("2_o0ije")]
 unique_name_in_owner = true
 position = Vector2(657, 848)
@@ -17,9 +22,6 @@ position = Vector2(657, 848)
 position = Vector2(1, 1)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
-
-[node name="Projectiles" type="Node2D" parent="."]
-unique_name_in_owner = true
 
 [node name="Lights" type="Node2D" parent="."]
 

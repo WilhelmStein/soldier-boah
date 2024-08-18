@@ -80,6 +80,6 @@ theme_override_constants/margin_bottom = 30
 [node name="HealthBar" type="TextureProgressBar" parent="MarginContainer"]
 layout_mode = 2
 max_value = 50.0
-value = 50.0
+value = 25.0
 texture_under = ExtResource("4_jge18")
 texture_progress = ExtResource("5_7l6va")
