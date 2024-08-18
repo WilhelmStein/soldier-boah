@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://2201jvbytk4u" path="res://graphics/lights/overlays/hole.png" id="8_xf7m0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sw71b"]
-size = Vector2(764, 154)
+size = Vector2(764, 204)
 
 [node name="Inside" instance=ExtResource("1_1dg83")]
 script = ExtResource("2_wllba")
@@ -121,7 +121,7 @@ blend_mode = 1
 [node name="ExitGateArea" type="Area2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
-position = Vector2(0, 181)
+position = Vector2(0, 156)
 shape = SubResource("RectangleShape2D_sw71b")
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
